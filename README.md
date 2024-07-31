@@ -13,15 +13,33 @@ Bu proje, ASP.NET MVC teknolojisi kullanılarak geliştirilmiş bir kitap kütü
 - Admin kullanıcıları bu panel üzerinden sisteme giriş yapabilir, yeni kullanıcılar oluşturabilir ve yönetebilirler.
 - Kitap yönetimi, ceza yönetimi, duyurular, kasa işlemleri gibi önemli yönetimsel işlemler bu panel üzerinden gerçekleştirilir.
 
+![Admin Panel Duyuru](https://github.com/ercansahin16/mvc5_DbKutuphane/blob/main/img/AdminPanelDuyuru.png)
+![Admin Panel Grafik](https://github.com/ercansahin16/mvc5_DbKutuphane/blob/main/img/AdminPanelGrafik.png)
+![Admin Panel İadesi Alınan Kitaplar](https://github.com/ercansahin16/mvc5_DbKutuphane/blob/main/img/AdminPanelIadesiAl%C4%B1nanKitaplar.png)
+![Admin Panel Kitaplar](https://github.com/ercansahin16/mvc5_DbKutuphane/blob/main/img/AdminPanelKitaplar.png)
+![Admin Panel Pasif Data](https://github.com/ercansahin16/mvc5_DbKutuphane/blob/main/img/AdminPanelPasifData.png)
+![Admin Panel İstatistik](https://github.com/ercansahin16/mvc5_DbKutuphane/blob/main/img/AdminPanel%C4%B0statistik.png)
+
 ### Vitrin Paneli
 
 - Bu panel, kütüphanenin web sitesi gibi çalışarak, ziyaretçilere kitaplar ve kütüphane hakkında bilgi sunar.
 - Duyurular ve Hakkımızda gibi sayfalar da bu panel üzerinden ziyaretçilere sunulur.
 
+![Vitrin](https://github.com/ercansahin16/mvc5_DbKutuphane/blob/main/img/Vitrin.png)
+
 ### Kullanıcı Paneli
 
 - Kayıtlı kullanıcılar bu panel üzerinden giriş yapabilir, kitap ödünç alabilir ve iade edebilirler.
 - Kullanıcılar, ceza durumlarını görebilir ve mesajlaşma sistemi aracılığıyla kütüphane personeli ile iletişime geçebilirler.
+
+![Kullanıcı Login](https://github.com/ercansahin16/mvc5_DbKutuphane/blob/main/img/KullaniciLogin.png)
+![Kullanıcı Register](https://github.com/ercansahin16/mvc5_DbKutuphane/blob/main/img/KullaniciRegister.png)
+![Kullanıcı Paneli 1](https://github.com/ercansahin16/mvc5_DbKutuphane/blob/main/img/Kullan%C4%B1c%C4%B1Paneli1.png)
+![Kullanıcı Paneli 2](https://github.com/ercansahin16/mvc5_DbKutuphane/blob/main/img/Kullan%C4%B1c%C4%B1Paneli2.png)
+![Kullanıcı Paneli 3](https://github.com/ercansahin16/mvc5_DbKutuphane/blob/main/img/Kullan%C4%B1c%C4%B1Paneli3.png)
+![Kullanıcı Paneli 4](https://github.com/ercansahin16/mvc5_DbKutuphane/blob/main/img/Kullan%C4%B1c%C4%B1Paneli4.png)
+![Kullanıcı Paneli 5](https://github.com/ercansahin16/mvc5_DbKutuphane/blob/main/img/Kullan%C4%B1c%C4%B1Paneli5.png)
+![Kullanıcı Paneli 6](https://github.com/ercansahin16/mvc5_DbKutuphane/blob/main/img/Kullan%C4%B1c%C4%B1Paneli6.png)
 
 ## Veritabanı Yapısı
 
