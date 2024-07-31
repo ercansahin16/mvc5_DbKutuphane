@@ -1,21 +1,28 @@
 ASP.NET MVC ile Kitap Kütüphane Yönetim Sistemi Projesi
+
 Proje Hakkında
+
 Bu proje, ASP.NET MVC teknolojisi kullanılarak geliştirilmiş bir kitap kütüphane yönetim sistemidir. Proje üç farklı panelden oluşmaktadır: Admin Paneli, Vitrin Paneli ve Kullanıcı Paneli. Bu paneller sayesinde sistemde yetkilendirilmiş kullanıcılar farklı işlemler gerçekleştirebilmektedir. Proje, Entity Framework, LINQ, SQL, Bootstrap, CSS, HTML5 ve diğer modern web teknolojileri kullanılarak inşa edilmiştir. Projenin veritabanı yapısı "DB First" yaklaşımı ile oluşturulmuştur.
 
 Paneller ve İşlevleri
+
 Admin Paneli:
 
 Admin kullanıcıları bu panel üzerinden sisteme giriş yapabilir, yeni kullanıcılar oluşturabilir ve yönetebilirler.
 Kitap yönetimi, ceza yönetimi, duyurular, kasa işlemleri gibi önemli yönetimsel işlemler bu panel üzerinden gerçekleştirilir.
+
 Vitrin Paneli:
 
 Bu panel, kütüphanenin web sitesi gibi çalışarak, ziyaretçilere kitaplar ve kütüphane hakkında bilgi sunar.
 Duyurular ve Hakkımızda gibi sayfalar da bu panel üzerinden ziyaretçilere sunulur.
+
 Kullanıcı Paneli:
 
 Kayıtlı kullanıcılar bu panel üzerinden giriş yapabilir, kitap ödünç alabilir ve iade edebilirler.
 Kullanıcılar, ceza durumlarını görebilir ve mesajlaşma sistemi aracılığıyla kütüphane personeli ile iletişime geçebilirler.
+
 Veritabanı Yapısı
+
 Projede toplamda 13 ilişkili tablo bulunmaktadır:
 
 ADMİN: Admin kullanıcılarını yönetir.
@@ -31,6 +38,7 @@ MESAJLAR: Kullanıcıların ve personelin birbirine gönderdiği mesajların kay
 PERSONEL: Kütüphane personelinin bilgilerini içeren tablo.
 ÜYELER: Kütüphane üyelerinin kayıtlarının tutulduğu tablo.
 YAZARLAR: Kitap yazarlarının bilgilerini içeren tablo.
+
 Projenin Geliştirilmesi ve Kazanımlar
 Bu proje üzerinde çalışmak, benim için büyük bir öğrenme deneyimi ve kişisel gelişim süreci olmuştur. ASP.NET MVC, Entity Framework ve LINQ gibi teknolojilerle çalışarak, bu alanlardaki bilgimi derinleştirdim ve yeteneklerimi geliştirdim. Ayrıca, SQL veritabanı tasarımı ve yönetimi konularında pratik deneyim kazandım.
 
@@ -46,4 +54,4 @@ Admin Paneli bağlantı adresi: /AdminLogin/Login/
 Username     :admin@admin.com
 Şifre        :123
 
-![Açıklama Metni]([resmin-dosya-yolu](https://github.com/ercansahin16/mvc5_DbKutuphane/blob/main/img/AdminLogin.png))
+![Açıklama Metni]([(https://github.com/ercansahin16/mvc5_DbKutuphane/blob/main/img/AdminLogin.png)])
