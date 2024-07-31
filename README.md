@@ -54,4 +54,5 @@ Admin Paneli bağlantı adresi: /AdminLogin/Login/
 Username     :admin@admin.com
 Şifre        :123
 
-![Açıklama Metni]([(https://github.com/ercansahin16/mvc5_DbKutuphane/blob/main/img/AdminLogin.png)])
+![Admin Login](https://github.com/ercansahin16/mvc5_DbKutuphane/blob/main/img/AdminLogin.png)
+
