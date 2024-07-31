@@ -1,0 +1,71 @@
+﻿@model MVCKutuphane.Models.Entity.TBLKITAP
+@{
+    ViewBag.Title = "KitapGetir";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+
+<div class="col-md-6 mx-auto  form-group ">
+    <h6 class="fw-bold ">Kitap Güncelleme Sayfası</h6>
+    <hr style="border:solid 2px black"/>
+    @using (Html.BeginForm("KitapGüncelle", "Kitap", FormMethod.Post))
+    {
+        <div class="form-group mt-3 fw-bolder" style="margin-bottom:15px">
+            @Html.LabelFor(k => k.ID)
+            @Html.TextBoxFor(k => k.ID, new { @class = "form-control" })
+        </div>
+        <div class="form-group mt-3 fw-bolder" style="margin-bottom:15px">
+            <label>KİTAP ADI</label>
+            @Html.TextBoxFor(k => k.AD, new { @class = "form-control", required = "required" })
+        </div>
+        <div class="form-group mt-3 fw-bolder" style="margin-bottom:15px">
+            <label>KATEGORİ</label>
+            @Html.DropDownListFor(k => k.TBLKATEGORI.ID, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+        </div>
+        <div class="form-group mt-3 fw-bolder" style="margin-bottom:15px">
+            <label>YAZARI</label>
+            @Html.DropDownListFor(k => k.TBLYAZAR.ID, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
+        </div>
+        <div class="form-group mt-3 fw-bolder" style="margin-bottom:15px">
+            <label>BASIM YILI</label>
+            @Html.TextBoxFor(k => k.BASIMYILI, new { @class = "form-control", required = "required" ,placeholder="En Fazla 4 karakter giriniz. ", maxlength = "4", oninput = "this.value=this.value.replace(/[^0-9]/g,'').slice(0,4)" })
+        </div>
+        <div class="form-group mt-3 fw-bolder" style="margin-bottom:15px">
+            <label>YAYINEVİ</label>
+            @Html.TextBoxFor(k => k.YAYINEVI, new { @class = "form-control", required = "required" })
+        </div>
+        <div class="form-group mt-3 fw-bolder" style="margin-bottom:15px">
+            <label>SAYFA SAYISI</label>
+            @Html.TextBoxFor(k => k.SAYFASAYISI, new { @class = "form-control", required = "required", placeholder = "En Fazla 4 karakter giriniz. ", maxlength = "4", oninput = "this.value=this.value.replace(/[^0-9]/g,'').slice(0,4)" })
+        </div>
+
+        <div>
+            <button class="btn fw-semibold w-100" style="margin-top: 25px; margin-bottom: 50px; background-color: #202f44; color: aliceblue ">Güncelle</button>
+
+            <input type="hidden" name="DURUM" value="True" />
+        </div>
+    }
+
+
+<style>
+    .d-flex-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .form-group {
+        width: 100%;
+        margin-top: 8%;
+    }
+
+    .form-control-custom, .btn-custom {
+        width: 100%;
+    }
+
+    .col-md-6 {
+        max-width: 275px; /* İstediğiniz maksimum genişliği ayarlayabilirsiniz */
+        width: 100%;
+    }
+</style>

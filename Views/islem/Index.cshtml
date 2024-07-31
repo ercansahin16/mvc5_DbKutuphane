@@ -1,0 +1,39 @@
+﻿@using MVCKutuphane.Models.Entity
+@model List<TBLHAREKET>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+<h6 class="fw-bold ">İadesi Alınan Kitaplar Listesi</h6>
+<hr style="border:solid 2px black" />
+<table class="table table-bordered mt-4 table-hover">
+    <tr>
+        <th>İŞLEM ID</th>
+        <th>ID  -  KİTAP ADI</th>
+        <th>ID  -  ÜYE ADI</th>
+        <th>ID  -  PERSONEL ADI</th>
+        <th>ALIŞ TARİHİ</th>
+        <th>ÜYE İADE TARİHİ</th>
+        <th>İŞLEMLER</th>
+    </tr>
+    @{ int sayac = 0;}
+    @foreach (var k in Model)
+
+    {
+        sayac++;
+        <tr>
+            <td>@k.ID</td>
+            <td>(@k.TBLKITAP.ID)  @k.TBLKITAP.AD</td>
+            <td>(@k.TBLUYELER.ID) @k.TBLUYELER.ADI&nbsp @k.TBLUYELER.SOYADI</td>
+            <td>(@k.TBLKITAP.ID)  @k.TBLPERSONEL.PERSONEL</td>
+            <td>@Convert.ToDateTime(k.ALISTARIHI).ToString("dd/MM/yyyy")</td>
+            <td>@Convert.ToDateTime(k.UYEGETIRTARIH).ToString("dd/MM/yyyy")</td>
+            <td>
+                <a href="#@*/Odunc/OduncIade/@k.ID*@" class="btn fw-semibold "  style=" background-color: #202f44; color: aliceblue">Detaylar</a>
+            </td>
+        </tr>
+    }
+    <h4 style="float:right">Veri Sayısı : @sayac</h4>
+</table>
+

@@ -1,0 +1,48 @@
+﻿@model MVCKutuphane.Models.Entity.TBLKATEGORI
+@{
+    ViewBag.Title = "KategoriEkle";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+<div class="col-md-6 mx-auto">
+    
+    <form class="form-group  " method="post">
+        <h6 class="fw-bold ">Kategori Ekleme Sayfası</h6>
+        <hr style="border:solid 2px black" />
+        <br />
+
+        <label class="fw-bolder">KATEGORİ ADI GİRİNİZ : </label>
+        <input type="text" class="form-control" name="ADI" required="required" />
+        <div style="margin-top:15px;margin-bottom:20px" class="fw-bolder">
+            <button class="btn fw-semibold w-100"  style="margin-top: 25px; margin-bottom: 50px; background-color: #202f44; color: aliceblue">Kategori Ekle</button>
+
+        </div>
+
+
+    </form>
+</div>
+
+
+<style>
+    .d-flex-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .form-group {
+        width: 100%;
+        margin-top: 60%;
+    }
+
+    .form-control-custom, .btn-custom {
+        width: 100%;
+    }
+
+    .col-md-6 {
+        max-width: 275px; /* İstediğiniz maksimum genişliği ayarlayabilirsiniz */
+        width: 100%;
+       
+    }
+</style>

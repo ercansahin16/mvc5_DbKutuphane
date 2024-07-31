@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Galeri";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <style>
+        .iframe-container {
+            /* Adjust width and height as needed */
+            width: 1300px;
+            height: 80vh;
+            border: 1px solid #ddd;
+            margin: 0 auto;
+            margin-top:20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="iframe-container">
+        <iframe src="~/Slider/i.html" frameborder="0" scrolling="auto" width="100%" height="100%">
+        </iframe>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
+<form action="/istatistik/resimyukle" method="post" enctype="multipart/form-data">
+    <div class="container d-flex justify-content-between mt-3 btn btn-light align-items-center">
+        <input type="file" name="dosya" id="dosya" />
+        <input type="submit" value="Kaydet" class="btn fw-semibold "  style=" background-color: #202f44; color: aliceblue"  />
+    </div>
+</form>

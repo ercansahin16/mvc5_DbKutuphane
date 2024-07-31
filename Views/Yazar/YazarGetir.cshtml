@@ -1,0 +1,57 @@
+﻿@model MVCKutuphane.Models.Entity.TBLYAZAR
+@{
+    ViewBag.Title = "YazarGetir";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+<div class="col-md-6 mx-auto form-group">
+
+    @using (Html.BeginForm("YazarGüncelle", "Yazar", FormMethod.Post))
+    {
+        <h6 class="fw-bold ">Yazar Güncelleme Sayfası</h6>
+        <hr style="border:solid 2px black" />
+        <div class=" mt-5 fw-bolder " style="margin-bottom:15px">
+
+            @Html.LabelFor(k => k.ID)
+            @Html.TextBoxFor(k => k.ID, new { @class = "form-control" })
+        </div>
+        <div class=" mt-5 fw-bolder" style="margin-bottom:15px">
+            <label>YAZAR ADI</label>
+            @Html.TextBoxFor(k => k.AD, new { @class = "form-control", required = "required" })
+        </div>
+        <div class=" mt-5 fw-bolder" style="margin-bottom:15px">
+            <label>YAZAR SOYADI</label>
+            @Html.TextBoxFor(k => k.SOYAD, new { @class = "form-control", required = "required" })
+        </div>
+        <div class=" mt-5 fw-bolder" style="margin-bottom:15px">
+            <label>YAZAR DETAY BİLGİLERİ</label>
+            @Html.TextAreaFor(k => k.DETAY, new { @class = "form-control", required = "required" })
+        </div>
+        <div>
+            <button style="margin-top: 25px; margin-bottom: 50px; background-color: #202f44; color: aliceblue" class="btn fw-semibold w-100" onclick="return confirm('Güncellensin mi?') ">Güncelle</button>
+        </div>
+    }
+</div>
+
+<style>
+    .d-flex-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .form-group {
+        width: 100%;
+        margin-top: 8%;
+    }
+
+    .form-control-custom, .btn-custom {
+        width: 100%;
+    }
+
+    .col-md-6 {
+        max-width: 275px; /* İstediğiniz maksimum genişliği ayarlayabilirsiniz */
+        width: 100%;
+    }
+</style>

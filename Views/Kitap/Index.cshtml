@@ -1,0 +1,57 @@
+﻿
+@using MVCKutuphane.Models.Entity
+@model List<TBLKITAP>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+<h6 class="fw-bold ">Kitaplar Listesi</h6>
+<hr style="border:solid 2px black" />
+
+@using (Html.BeginForm("KitapAra", "Kitap", FormMethod.Post))
+{
+  <div class="form-group">
+      <b>Kitap Adı Ara : &nbsp;</b>@Html.TextBox("searchString", ViewBag.SearchString as string, new { @class = "form-control d-inline", style = "width: auto; display: inline-block;" })
+  </div>
+}
+<table class="table table-bordered mt-4 table-hover">
+
+    <tr>
+        <th>ID</th>
+        <th>KİTAP ADI</th>
+        <th>KİTAP YAZARI</th>
+        <th>KATEGORİSİ</th>
+        <th>BASIM YILI</th>
+        <th>YAYINEVİ</th>
+        <th>SAYFA SAYISI</th>
+        <th>DURUM</th>
+        <th>İŞLEMLER</th>
+    </tr>
+    @{ int sayac = 0;}
+    @foreach (var k in Model)
+
+    {
+        sayac++;
+        <tr>
+            <td>@k.ID</td>
+            <td>@k.AD</td>
+            <td>@k.TBLYAZAR.AD&nbsp @k.TBLYAZAR.SOYAD</td>
+            <td>@k.TBLKATEGORI.ADI</td>
+            <td>@k.BASIMYILI</td>
+            <td>@k.YAYINEVI</td>
+            <td>@k.SAYFASAYISI</td>
+            <td>@k.DURUM</td>
+            <td>
+                <a href="/Kitap/KitapGetir/@k.ID" class="btn fw-semibold  mx-1 " style="background-color:#5073a3; color: aliceblue ">Güncelle</a>
+            </td>
+            <td>
+                <a href="/Kitap/KitapSil/@k.ID" class="btn fw-semibold mx-1" style="background-color:#5073a3; color: aliceblue ">PasifYap</a>
+            </td>
+        </tr>
+
+    }
+    <h4 style="float:right">Veri Sayısı : @sayac</h4>
+</table>
+
+<a href="/Kitap/KitapEkle" class="btn fw-semibold w-100" id="btn1" style="margin-top: 25px; margin-bottom: 50px; background-color: #202f44; color: aliceblue">Yeni Kitap Ekle</a>

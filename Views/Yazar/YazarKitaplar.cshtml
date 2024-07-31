@@ -1,0 +1,35 @@
+﻿@using MVCKutuphane.Models.Entity
+@model List<TBLKITAP>
+@{
+    ViewBag.Title = "YazarKitaplar";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+<h6 class="fw-bold ">Yazarlar Listesi</h6>
+<hr style="border:solid 2px black" />
+
+Yazar: &nbsp
+<span class="fw-bold p-2" style=" background-color: #fbccb9; border-radius:5px">@ViewBag.yzrktpViewBag</span>
+<table class="table table-bordered mt-4 table-hover">
+    <tr>
+        <th>KİTAP ID</th>
+        <th>KİTAP ADI</th>
+        <th>KATEGORİ</th>
+        <th>YAYINEVİ</th>
+
+    </tr>
+    @{int sayac = 0; }
+    @foreach (var yzr in Model)
+    {
+        sayac++;
+        <tr>
+            <td>@yzr.ID</td>
+            <td>@yzr.AD</td>
+            <td>@yzr.TBLKATEGORI.ADI</td>
+            <td>@yzr.YAYINEVI</td>
+
+        </tr>
+    }
+    <h4 style="float:right">Veri Sayısı : @sayac</h4>
+</table>
+

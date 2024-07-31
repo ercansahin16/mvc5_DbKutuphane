@@ -1,0 +1,58 @@
+﻿@using MVCKutuphane.Models.Entity
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<TBLUYELER>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+<link href="~/Content/Mystyle.css" rel="stylesheet" />
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+
+<h6 class="fw-bold ">Üyeler Listesi</h6>
+<hr style="border:solid 2px black" />
+<table class="table table-bordered mt-5 table-hover">
+    <tr>
+        <th>ÜYE ID</th>
+        <th>ÜYE ADI</th>
+        <th>ÜYE SOYADI</th>
+        <th>E-POSTA</th>
+        <th>TELEFON</th>
+        <th>OKUL</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    @foreach (var uye in Model)
+    {
+
+        <tr>
+            <td>@uye.ID</td>
+            <td>@uye.ADI</td>
+            <td>@uye.SOYADI</td>
+            <td>@uye.MAIL</td>
+            <td>@uye.TELEFON</td>
+            <td>@uye.OKUL</td>
+            <td>
+                <a href="/Üye/UyeGetir/@uye.ID" class="btn fw-semibold mx-1" style="background-color:#5073a3; color: aliceblue ">Güncelle</a>
+            </td>
+            <td>
+                <a href="/Üye/UyeSil/@uye.ID" class="btn fw-semibold  mx-1" style="background-color:#5073a3; color: aliceblue ">PasifYap</a>
+            </td>
+            <td>
+                <a href="/Üye/uyekitapgecmis/@uye.ID" class="btn fw-semibold  mx-1" style="background-color:#5073a3; color: aliceblue ">Üye Geçmişi</a>
+            </td>
+        </tr>
+    }
+
+</table>
+<div class="pagination ">
+    @Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
+</div>
+
+
+
+<a href="/Üye/UyeEkle" class="btn fw-semibold w-100" style="margin-top: 25px; margin-bottom: 50px; background-color: #202f44; color: aliceblue ">Yeni Üye Ekle</a>
+
+

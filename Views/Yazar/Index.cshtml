@@ -1,0 +1,43 @@
+﻿@using MVCKutuphane.Models.Entity
+@model List<TBLYAZAR>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+<h6 class="fw-bold ">Yazarlar Listesi</h6>
+<hr style="border:solid 2px black" />
+
+<table class="table table-bordered mt-4 table-hover">
+    <tr>
+        <th>YAZAR ID</th>
+        <th>AD</th>
+        <th>SOYAD</th>
+        <th>YAZAR DETAY BİLGİLERİ</th>
+        <th></th>
+        <th></th>
+    </tr>
+    @{int sayac = 0; }
+    @foreach (var yzr in Model)
+    {
+        sayac++;
+        <tr>
+            <td>@yzr.ID</td>
+            <td>@yzr.AD</td>
+            <td>@yzr.SOYAD</td>
+            <td>@yzr.DETAY</td>
+
+            <td>
+                <a href="/Yazar/YazarGetir/@yzr.ID" class="btn fw-semibold   " style="background-color: #5073a3; color: aliceblue ">Güncelle</a>
+            </td>
+            <td>
+                @Html.ActionLink("PasifYap", "YazarSil", new { id = yzr.ID }, new { @class = "btn fw-semibold mx-1", style = "background-color: #5073a3; color: aliceblue " })
+            </td>
+            <td>
+                <a href="/Yazar/YazarKitaplar/@yzr.ID" class="btn fw-semibold mx-1 " style="background-color: #5073a3; color: aliceblue ">Yazar kitaplar</a>
+            </td>
+        </tr>
+    }
+    <h4 style="float:right">Veri Sayısı : @sayac</h4>
+</table>
+<a href="/Yazar/YazarEkle" class="btn fw-semibold w-100" style="margin-top: 25px; margin-bottom: 50px; background-color: #202f44; color: aliceblue">Yeni Yazar Ekle</a>

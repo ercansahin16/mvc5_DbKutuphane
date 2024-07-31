@@ -1,0 +1,30 @@
+﻿@model MVCKutuphane.Models.Entity.TBLMESAJLAR
+@{
+    ViewBag.Title = "YeniMesaj";
+    Layout = "~/Views/Shared/MyPanelim.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <br />
+        <div>
+            <label class="fw-bolder">Alıcı</label>
+            @Html.TextBoxFor(k => k.ALICI, new { @class = "form-control", required = "required" })
+        </div>
+        <div>
+            <label class="fw-bolder">Konu</label>
+            @Html.TextBoxFor(k => k.KONU, new { @class = "form-control", required = "required" })
+        </div>
+        <div>
+            <label class="fw-bolder">İçerik</label>
+            @Html.TextAreaFor(k => k.ICERIK, new { @class = "form-control", required = "required" })
+        </div>
+
+        <div style="margin-top:15px;margin-bottom:20px" class="fw-bolder">
+
+            <button class="btn btn-info w-100 fw-bold" id="btn1">Gönder</button>
+
+        </div>
+    </div>
+
+</form>

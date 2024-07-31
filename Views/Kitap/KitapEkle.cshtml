@@ -1,0 +1,82 @@
+﻿@model MVCKutuphane.Models.Entity.TBLKITAP
+
+@{
+    ViewBag.Title = "KitapEkle";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+<div class="col-md-6 mx-auto">
+
+ 
+    <form class="form-group" method="post">
+        <h6 class="fw-bold ">Kitap Ekleme Sayfası</h6>
+        <hr style="border:solid 2px black" />
+        <div class="fw-bolder">
+            <br />
+            <div>
+                <label>KİTAP ADI</label>
+                @Html.TextBoxFor(k => k.AD, new { @class = "form-control" })
+            </div>
+            <br />
+            <div>
+                <label>KATEGORİ SEÇ</label>
+                @Html.DropDownListFor(k => k.TBLKATEGORI.ID, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+            </div>
+            <br />
+            <div>
+                <label>YAZAR SEÇ</label>
+                @Html.DropDownListFor(k => k.TBLYAZAR.ID, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
+            </div>
+            <br />
+            <div>
+                <label>BASIM YILI</label>
+                @Html.TextBoxFor(k => k.BASIMYILI, new { @class = "form-control" })
+            </div>
+            <br />
+            <div>
+                <label>YAYINEVİ</label>
+                @Html.TextBoxFor(k => k.YAYINEVI, new { @class = "form-control" })
+            </div>
+            <br />
+            <div>
+                <label>SAYFA SAYISI</label>
+                @Html.TextBoxFor(k => k.SAYFASAYISI, new { @class = "form-control" })
+            </div>
+            <br />
+            <div>
+                <label>RESİM URL LİNKİ</label>
+                @Html.TextBoxFor(k => k.KITAPRESIM, new { @class = "form-control" })
+            </div>
+            <br />
+            <div class=" mt-3">
+                <button class="btn fw-semibold w-100" style="margin-top: 25px; margin-bottom: 50px; background-color: #202f44; color: aliceblue ">Kitap Ekle</button>
+            </div>
+            @*@Html.HiddenFor(k=>k.DURUM)*@
+            <input type="hidden" name="DURUM" value="True" />
+        </div>
+    </form>
+    </div>
+
+
+<style>
+    .d-flex-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .form-group {
+        width: 100%;
+        margin-top: 30%;
+    }
+
+    .form-control-custom, .btn-custom {
+        width: 100%;
+    }
+
+    .col-md-6 {
+        max-width: 275px; /* İstediğiniz maksimum genişliği ayarlayabilirsiniz */
+        width: 100%;
+       
+    }
+</style>

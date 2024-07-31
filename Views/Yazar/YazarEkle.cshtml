@@ -1,0 +1,59 @@
+﻿@model MVCKutuphane.Models.Entity.TBLYAZAR
+@{
+    ViewBag.Title = "YazarEkle";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+
+<div class="col-md-6 mx-auto form-group">
+    <h6 class="fw-bold ">Yazar Ekleme Sayfası</h6>
+    <hr style="border:solid 2px black" />
+    <form  method="post">
+        <div></div>
+        <div class="fw-bolder">
+            <br />
+            <div>
+                <label>YAZAR ADI</label>
+                @Html.TextBoxFor(k => k.AD, new { @class = "form-control", required = "required" })
+
+            </div>
+            <br />
+            <div>
+                <label>YAZAR SOYADI</label>
+                @*@Html.LabelFor(k=>k.SOYAD)*@
+                @Html.TextBoxFor(k => k.SOYAD, new { @class = "form-control", required = "required" })
+            </div>
+            <br />
+            <div>
+                <label>YAZAR DETAY BİLGİLERİ</label>
+                @Html.TextAreaFor(k => k.DETAY, new { @class = "form-control", required = "required" })
+            </div>
+            <br />
+            <div class=" mt-3">
+                <button class="btn fw-semibold w-100" id="btn1" style="margin-top: 25px; margin-bottom: 50px; background-color: #202f44; color: aliceblue">Yazar Ekle</button>
+            </div>
+        </div>
+    </form>
+</div>
+<style>
+    .d-flex-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .form-group {
+        width: 100%;
+        margin-top: 8%;
+    }
+
+    .form-control-custom, .btn-custom {
+        width: 100%;
+    }
+
+    .col-md-6 {
+        max-width: 275px; /* İstediğiniz maksimum genişliği ayarlayabilirsiniz */
+        width: 100%;
+    }
+</style>

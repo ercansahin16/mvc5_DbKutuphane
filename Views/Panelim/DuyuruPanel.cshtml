@@ -1,0 +1,34 @@
+﻿@using MVCKutuphane.Models.Entity
+@model List<TBLDUYURULAR>
+@{
+    ViewBag.Title = "DuyuruPanel";
+    Layout = "~/Views/Shared/MyPanelim.cshtml";
+}
+
+<h6 class="fw-bold ">Duyrular Sayfası</h6>
+<hr style="border:solid 2px black" />
+
+<table class="table table-bordered mt-4 table-hover">
+    <tr>
+      
+        <th>Duyuru Kategorisi</th>
+        <th>Duyuru Tarihi</th>
+        <th>Duyuru İçeriği</th>
+
+    </tr>
+    @{int sayac = 0; }
+    @foreach (var dyr in Model)
+    {
+        sayac++;
+        <tr>
+
+            <td>@dyr.KATEGORI</td>
+            <td>@Convert.ToDateTime( dyr.TARIH).ToString("dd.MM.yyyy")</td>
+            <td>@dyr.ICERIK</td>
+
+
+
+        </tr>
+    }
+    <h4 style="float:right">Veri Sayısı : @sayac</h4>
+</table>

@@ -1,0 +1,60 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin-Kütüphane</title>
+    <link href="~/webLogin-Admin/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/webLogin-Admin/assets/css/awesome-bootstrap-checkbox.min.css" rel="stylesheet">
+    <link href="~/webLogin-Admin/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/webLogin-Admin/assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <span class="header-ribbon" />
+    @using(Html.BeginForm("Login", "AdminLogin", FormMethod.Post)) {
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 col-centered " style="margin-left:40%;margin-top:-2%">
+                <div class="login-panel">
+                    <h4 class="login-panel-title">Admin Giriş Paneli</h4>
+                    <p class="login-panel-tagline">Dijital Kütüphane Platformu</p>
+
+                   
+                    <div class="login-panel-section">
+                        <div class="form-group">
+                            <div class="input-group margin-bottom-sm">
+                                <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw" aria-hidden="true"></i></span>
+                                <input class="form-control" name="KULLANICI" type="text" placeholder="E-Mail Adresiniz" required="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-key fa-fw" aria-hidden="true"></i></span>
+                                <input class="form-control" name="SIFRE" type="password" placeholder="Şifreniz" required="">
+                            </div>
+                        </div>
+                        <div class="checkbox checkbox-circle checkbox-success checkbox-small">
+                            <input type="checkbox" id="checkbox1">
+                            <label for="checkbox1">Oturumu açık tut</label>
+                            <a href="#" class="pull-right" style="margin-left:10px">Parolamı unuttum?</a>
+                        </div>
+                    </div>
+                    <div class="login-panel-section">
+                        <button type="submit" class="btn btn-default"><i class="fa fa-sign-in fa-fw" aria-hidden="true"></i> Giriş</button> | <a href="/vitrin/Index/">Vitrine Geri Dön</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+    <script src="~/webLogin-Admin/assets/js/jquery.min.js"></script>
+    <script src="~/webLogin-Admin/assets/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+﻿@model MVCKutuphane.Models.Entity.TBLUYELER
+@{
+    ViewBag.Title = "UyeGetir";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+
+<div class="col-md-6 mx-auto form-group">
+<h6 class="fw-bold ">Üye Güncelleme Sayfası</h6>
+<hr style="border:solid 2px black" />
+@using (Html.BeginForm("UyeGüncelle", "Üye", FormMethod.Post))
+{
+    <div class=" mt-5 fw-bolder" style="margin-bottom:15px">
+        @Html.LabelFor(k => k.ID)
+        @Html.TextBoxFor(k => k.ID, new { @class = "form-control" })
+    </div>
+    <div class=" mt-2 fw-bolder" style="margin-bottom:15px">
+        <label>ÜYE ADI</label>
+        @Html.TextBoxFor(k => k.ADI, new { @class = "form-control", required = "required" })
+    </div>
+    <div class=" mt-2 fw-bolder" style="margin-bottom:15px">
+        <label>ÜYE SOYADI</label>
+        @Html.TextBoxFor(k => k.SOYADI, new { @class = "form-control", required = "required" })
+    </div>
+    <div class=" mt-2 fw-bolder" style="margin-bottom:15px">
+        <label>E-POSTA</label>
+        @Html.TextBoxFor(k => k.MAIL, new { @class = "form-control", required = "required" })
+    </div>
+    <div class=" mt-2 fw-bolder" style="margin-bottom:15px">
+        <label>KULLANICI ADI</label>
+        @Html.TextBoxFor(k => k.KULLANICIADI, new { @class = "form-control", required = "required" })
+    </div>
+    <div class=" mt- fw-bolder" style="margin-bottom:15px">
+        <label>ŞİFRE</label>
+        @Html.TextBoxFor(k => k.SIFRE, new { @class = "form-control", required = "required" })
+    </div>
+    <div class=" mt-2 fw-bolder" style="margin-bottom:15px">
+        <label>FOTOĞRAF LİNKİ</label>
+        @Html.TextBoxFor(k => k.FOTOGRAF, new { @class = "form-control", required = "required" })
+    </div>
+    <div class=" mt-2 fw-bolder" style="margin-bottom:15px">
+        <label>TELEFON</label>
+        @Html.TextBoxFor(k => k.TELEFON, new { @class = "form-control", required = "required" })
+    </div>
+    <div class=" mt-2 fw-bolder" style="margin-bottom:15px">
+        <label>OKUL</label>
+        @Html.TextBoxFor(k => k.OKUL, new { @class = "form-control", required = "required" })
+    </div>
+    <div>
+        <button class="btn fw-semibold w-100"  style="margin-top: 25px; margin-bottom: 50px; background-color: #202f44; color: aliceblue" onclick="return confirm('Güncellensin mi?')">Güncelle</button>
+    </div>
+}
+    </div>
+
+
+<style>
+    .d-flex-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .form-group {
+        width: 100%;
+        margin-top:2%;
+    }
+
+    .form-control-custom, .btn-custom {
+        width: 100%;
+    }
+
+    .col-md-6 {
+        max-width: 275px; /* İstediğiniz maksimum genişliği ayarlayabilirsiniz */
+        width: 100%;
+    }
+</style>

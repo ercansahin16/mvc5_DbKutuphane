@@ -1,0 +1,91 @@
+﻿@model MVCKutuphane.Models.Entity.TBLUYELER
+@{
+    ViewBag.Title = "UyeEkle";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+
+<div class="col-md-6 mx-auto form-group">
+    <h6 class="fw-bold ">Üye Ekleme Sayfası</h6>
+    <hr style="border:solid 2px black" />
+    <form method="post">
+        <div>
+            <br />
+            <div>
+                <label class="fw-bolder">ÜYE ADI</label>
+                @Html.TextBoxFor(k => k.ADI, new { @class = "form-control" })
+                @Html.ValidationMessageFor(k => k.ADI, "", new { @style = "color:red" })
+            </div>
+            <br />
+            <div>
+                <label class="fw-bolder">ÜYE SOYADI</label>
+                @Html.TextBoxFor(k => k.SOYADI, new { @class = "form-control", required = "required" })
+
+            </div>
+            <br />
+            <div>
+                <label class="fw-bolder">E-POSTA</label>
+                @Html.TextBoxFor(k => k.MAIL, new { @class = "form-control", required = "required" })
+                @Html.ValidationMessageFor(k => k.MAIL, "", new { @style = "color:red" })
+            </div>
+            <br />
+            <div>
+                <label class="fw-bolder">KULLANICI ADI</label>
+                @Html.TextBoxFor(k => k.KULLANICIADI, new { @class = "form-control", required = "required" })
+                @Html.ValidationMessageFor(k => k.KULLANICIADI, "", new { @style = "color:red" })
+            </div>
+            <br />
+            <div>
+                <label class="fw-bolder">ŞİFRE</label>
+                @Html.TextBoxFor(k => k.SIFRE, new { @class = "form-control", required = "required" })
+                @Html.ValidationMessageFor(k => k.SIFRE, "", new { @style = "color:red" })
+            </div>
+            <br />
+            <div>
+                <label class="fw-bolder">FOTOĞRAF LİNK</label>
+                @Html.TextBoxFor(k => k.FOTOGRAF, new { @class = "form-control", required = "required" })
+                @Html.ValidationMessageFor(k => k.FOTOGRAF, "", new { @style = "color:red" })
+            </div>
+            <br />
+            <div>
+                <label class="fw-bolder">TELEFON</label>
+                @Html.TextBoxFor(k => k.TELEFON, new { @class = "form-control", required = "required" })
+                @Html.ValidationMessageFor(k => k.TELEFON, "", new { @style = "color:red" })
+            </div>
+            <br />
+            <div>
+                <label class="fw-bolder">OKUL</label>
+                @Html.TextBoxFor(k => k.OKUL, new { @class = "form-control", required = "required" })
+                @Html.ValidationMessageFor(k => k.OKUL, "", new { @style = "color:red" })
+            </div>
+            <div style="margin-top:15px;margin-bottom:20px" class="fw-bolder">
+                <button class="btn fw-semibold w-100"  style="margin-top: 25px; margin-bottom: 50px; background-color: #202f44; color: aliceblue">Üye Ekle</button>
+
+            </div>
+        </div>
+
+    </form>
+</div>
+
+<style>
+    .d-flex-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .form-group {
+        width: 100%;
+        margin-top: 2%;
+    }
+
+    .form-control-custom, .btn-custom {
+        width: 100%;
+    }
+
+    .col-md-6 {
+        max-width: 275px; /* İstediğiniz maksimum genişliği ayarlayabilirsiniz */
+        width: 100%;
+    }
+</style>

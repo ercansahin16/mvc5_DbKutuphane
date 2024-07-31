@@ -1,0 +1,193 @@
+﻿
+@model MVCKutuphane.Models.AktifPasifViewModel
+@{
+    ViewBag.Title = "AktifPasif";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+
+<h6 class="fw-bold ">Pasif Data Listesi</h6>
+<hr style="border:solid 2px black" />
+<div class="p-2" style="border:solid 2px red ">
+
+    <h6 class="fw-bold pe-5 ps-5 pb-2 pt-1" style="background-color:#ea8c1c; display:inline; border-radius:5px;">Kategoriler</h6>
+
+    <table class="table table-bordered  table-hover">
+        <tr>
+            <th>KATEGORİ ID</th>
+            <th>KATEGORİ ADI</th>
+          
+        </tr>
+        @{int sayac = 0; }
+        @foreach (var ktg in Model.Kategoriler)
+        {
+            sayac++;
+            <tr>
+                <td>@ktg.ID</td>
+                <td>@ktg.ADI</td>
+                <td>
+
+                    @using (Html.BeginForm("AktifPasif", "islem", FormMethod.Post))
+                    {
+                        @Html.Hidden("id", ktg.ID)
+                        @Html.Hidden("type", "kategori")
+                    <button type="submit" class="btn fw-semibold mx-4" style="background-color:#5073a3; color: aliceblue; float:right">Aktif Yap</button>
+                    }
+                </td>
+            </tr>
+        }
+        <h4 style="float:right">Veri Sayısı : @sayac</h4>
+    </table>
+</div>
+
+
+
+<div class="p-2 mt-3" style="border:solid 2px red ">
+    <h6 class="fw-bold pe-5 ps-5 pb-2 pt-1 " style="background-color:#ea8c1c; display:inline; border-radius:5px">Kitaplar</h6>
+    <table class="table table-bordered  table-hover">
+        <tr>
+            <th>KİTAP ID</th>
+            <th>KİTAP ADI</th>
+            <th>KATEGORİ</th>
+            <th>YAZAR</th>
+            <th>BASIMYILI</th>
+            <th>YAYINEVİ</th>
+            <th>SAYFA SAYISI</th>
+           
+        @{int sayacp = 0; }
+        @foreach (var kitap in Model.Kitaplar)
+        {
+            sayacp++;
+            <tr>
+                <td>@kitap.ID</td>
+                <td>@kitap.AD</td>
+                <td>@kitap.TBLKATEGORI.ADI</td>
+                <td>@kitap.TBLYAZAR.AD</td>
+                <td>@kitap.BASIMYILI</td>
+                <td>@kitap.YAYINEVI</td>
+                <td>@kitap.SAYFASAYISI</td>
+                <td>
+                    @using (Html.BeginForm("AktifPasif", "islem", FormMethod.Post))
+                    {
+                        @Html.Hidden("id", kitap.ID)
+                        @Html.Hidden("type", "kitap")
+                        <button type="submit" class="btn fw-semibold mx-4" style="background-color: #5073a3; color: aliceblue; float: right">Aktif Yap</button>
+                    }
+
+                </td>
+            </tr>
+        }
+        <h4 style="float:right">Veri Sayısı : @sayacp</h4>
+    </table>
+    </div>
+
+
+
+<div class="p-2 mt-3" style="border:solid 2px red ">
+    <h6 class="fw-bold pe-5 ps-5 pb-2 pt-1 " style="background-color:#ea8c1c; display:inline; border-radius:5px">Yazarlar</h6>
+    <table class="table table-bordered  table-hover">
+        <tr>
+            <th>YAZAR ID</th>
+            <th>YAZAR ADI</th>
+            <th>SOYADI</th>
+            <th>DETAY</th>
+           
+        </tr>
+        @{int sayacK = 0; }
+        @foreach (var yazarlar in Model.Yazarlar)
+        {
+            sayacK++;
+            <tr>
+                <td>@yazarlar.ID</td>
+                <td>@yazarlar.AD</td>
+                <td>@yazarlar.SOYAD</td>
+                <td>@yazarlar.DETAY</td>
+                <td>
+                    @using (Html.BeginForm("AktifPasif", "islem", FormMethod.Post))
+                    {
+                        @Html.Hidden("id", yazarlar.ID)
+                        @Html.Hidden("type", "yazarlar")
+                        <button type="submit" class="btn fw-semibold mx-4" style="background-color: #5073a3; color: aliceblue; float: right">Aktif Yap</button>
+                    }
+
+                </td>
+            </tr>
+        }
+        <h4 style="float:right">Veri Sayısı : @sayacK</h4>
+    </table>
+</div>
+
+
+
+<div class="p-2 mt-3" style="border:solid 2px red ">
+    <h6 class="fw-bold pe-5 ps-5 pb-2 pt-1 " style="background-color:#ea8c1c; display:inline; border-radius:5px">Üyeler</h6>
+    <table class="table table-bordered  table-hover">
+        <tr>
+            <th>ÜYE ID</th>
+            <th>ÜYE ADI</th>
+            <th>SOYADI</th>
+            <th>KULLANICI ADI</th>
+            <th>TELEFON</th>
+            <th>OKUL</th>
+            <th>MAİL</th>
+          
+        </tr>
+        @{int sayacu = 0; }
+        @foreach (var uye in Model.Uyeler)
+        {
+            sayacu++;
+            <tr>
+                <td>@uye.ID</td>
+                <td>@uye.ADI</td>
+                <td>@uye.SOYADI</td>
+                <td>@uye.MAIL</td>
+                <td>@uye.KULLANICIADI</td>
+                <td>@uye.TELEFON</td>
+                <td>@uye.OKUL</td>
+               
+                <td>
+                    @using (Html.BeginForm("AktifPasif", "islem", FormMethod.Post))
+                    {
+                        @Html.Hidden("id", uye.ID)
+                        @Html.Hidden("type", "uyeler")
+                        <button type="submit" class="btn fw-semibold mx-4" style="background-color: #5073a3; color: aliceblue; float: right">Aktif Yap</button>
+                    }
+                </td>
+            </tr>
+        }
+        <h4 style="float:right">Veri Sayısı : @sayacu</h4>
+    </table>
+</div>
+
+
+
+<div class="p-2 mt-3 mb-5" style="border:solid 2px red ">
+    <h6 class="fw-bold pe-5 ps-5 pb-2 pt-1 " style="background-color:#ea8c1c; display:inline; border-radius:5px">Personeller</h6>
+    <table class="table table-bordered  table-hover">
+        <tr>
+            <th>ÜYE ID</th>
+            <th>PERSONEL</th>
+         
+        </tr>
+        @{int sayacpp = 0; }
+        @foreach (var pers in Model.Personeller)
+        {
+            sayacpp++;
+            <tr>
+                <td>@pers.ID</td>
+                <td>@pers.PERSONEL</td>
+
+                <td>
+                    @using (Html.BeginForm("AktifPasif", "islem", FormMethod.Post))
+                    {
+                        @Html.Hidden("id", pers.ID)
+                        @Html.Hidden("type", "personelller")
+                        <button type="submit" class="btn fw-semibold mx-4" style="background-color: #5073a3; color: aliceblue; float: right">Aktif Yap</button>
+                    }
+
+                </td>
+            </tr>
+        }
+        <h4 style="float:right">Veri Sayısı : @sayacpp</h4>
+    </table>
+</div>

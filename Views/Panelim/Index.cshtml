@@ -1,0 +1,59 @@
+﻿@using MVCKutuphane.Models.Entity
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MyPanelim.cshtml";
+}
+
+<h2 class="mt-2 mb-3">Profil Bilgilerim</h2>
+
+
+
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <td style="vertical-align: middle;"><span class="fw-bold">ID : </span></td>
+            <td style="vertical-align: middle;">@Session["ID"].ToString()</td>
+            <td rowspan="6">
+                @if (Session["FOTOGRAF"] != null)
+                {
+                    <img src="@Session["FOTOGRAF"].ToString()" width="300px" class="mx-auto d-flex" />
+                }
+                else
+                {
+            <a href="/Panelim/Hesabim/"> <img src="@Model.FOTOGRAF" width="300px" class="mx-auto d-flex" alt="Profil Resmi Yükle" /></a>
+                }
+            </td>
+        </tr>
+
+        <tr>
+            <td style="vertical-align: middle;"><span class="fw-bold">Mail Adresi : </span> </td>
+            <td style="vertical-align: middle;"> @Session["MAIL"].ToString()</td>
+        </tr>
+        <tr>
+            @*Burası Boş kalacak*@
+        </tr>
+        <tr>
+            @*Burası Boş kalacak*@
+        </tr>
+        <tr>
+            <td style="vertical-align: middle;"><span class="fw-bold">Kullanıcı adı : </span></td>
+            <td style="vertical-align: middle;" > @Session["KULLANICIADI"].ToString()</td>
+        </tr>
+        <tr>
+            <td style="vertical-align: middle;"><span class="fw-bold">Şifre : </span></td>
+            <td style="vertical-align: middle;">@Session["SIFRE"].ToString()</td>
+        </tr>
+        <tr>
+            <td style="vertical-align: middle;"><span class="fw-bold">Okul : </span></td>
+            <td style="vertical-align: middle;" >@Session["OKUL"].ToString()</td>
+            <td class="mx-auto d-flex justify-content-center fw-bold">
+                @Session["ADI"].ToString()
+                @Session["SOYADI"].ToString()
+            </td>
+        </tr>
+
+    </tbody>
+
+</table>
+
+

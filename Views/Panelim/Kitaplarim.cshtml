@@ -1,0 +1,33 @@
+﻿@using MVCKutuphane.Models.Entity
+@model List<TBLHAREKET>
+
+@{
+    ViewBag.Title = "Kitaplarim";
+    Layout = "~/Views/Shared/MyPanelim.cshtml";
+}
+
+<h2 class="mt-4">Kitap Geçmişim</h2>
+
+<table class="table table-bordered mt-4 table-hover">
+    <tr>
+        <th>SIRA NO</th>
+        <th>KİTAP ADI</th>
+        <th>ALIŞ TARİHİ</th>
+        <th>ÜYE İADE TARİHİ</th>
+
+    </tr>
+    @{ int sayac = 0;}
+    @foreach (var k in Model)
+
+    {
+        sayac++;
+        <tr>
+            <td>@sayac</td>
+            <td>@k.TBLKITAP.AD</td>
+            <td>@Convert.ToDateTime(k.ALISTARIHI).ToString("dd/MM/yyyy")</td>
+            <td>@Convert.ToDateTime(k.UYEGETIRTARIH).ToString("dd/MM/yyyy")</td>
+        </tr>
+    }
+    <h4 style="float:right">Veri Sayısı : @sayac</h4>
+
+</table>

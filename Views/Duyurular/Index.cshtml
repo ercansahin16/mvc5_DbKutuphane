@@ -1,0 +1,39 @@
+﻿@using MVCKutuphane.Models.Entity
+@model List<TBLDUYURULAR>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+<h6 class="fw-bold ">Duyrular Sayfası</h6>
+<hr style="border:solid 2px black" />
+
+<table class="table table-bordered mt-4 table-hover">
+    <tr>
+        <th>DUYURU NO</th>
+        <th>KATEGORİ</th>
+        <th>TARİH</th>
+        <th></th>
+        <th></th>
+
+    </tr>
+    @{int sayac = 0; }
+    @foreach (var dyr in Model)
+    {
+        sayac++;
+        <tr>
+            <td>@dyr.ID</td>
+            <td>@dyr.KATEGORI</td>
+            <td>@dyr.TARIH</td>
+            <td>
+                <a href="/Duyurular/DuyuruSil/@dyr.ID" class="btn fw-semibold  mx-1 " style="background-color:#5073a3; color: aliceblue ">Sil</a>
+            </td>
+
+            <td>
+                <a href="/Duyurular/DuyuruDetay/@dyr.ID" class="btn fw-semibold  mx-1 " style="background-color:#5073a3; color: aliceblue ">İçerik</a>
+            </td>
+        </tr>
+    }
+    <h4 style="float:right">Veri Sayısı : @sayac</h4>
+</table>
+<a href="/Duyurular/YeniDuyuruEkle/" class="btn fw-semibold w-100" style="margin-top: 25px; margin-bottom: 50px; background-color: #202f44; color: aliceblue ">Yeni Duyuru Ekle</a>

@@ -1,0 +1,36 @@
+﻿@using MVCKutuphane.Models.Entity
+@model List<TBLHAREKET>
+@{
+    ViewBag.Title = "uyekitapgecmis";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+<h6 class="fw-bold ">Üye Kitap Geçmişi Listesi </h6>
+<hr style="border:solid 2px black" />Üye: &nbsp
+<span class="fw-bold p-2" style=" background-color: #fbccb9; border-radius:5px">@ViewBag.uyekitapviewbag</span>
+<table class="table table-bordered mt-5 table-hover">
+    <tr>
+        <th>KİTAP ADI</th>
+        <th>PERSONEL</th>
+        <th>ALIS TARIHI</th>
+        <th>İADE TARİHİ</th>
+
+
+    </tr>
+
+    @foreach (var uye in Model)
+    {
+
+        <tr>
+            <td>@uye.TBLKITAP.AD</td>
+            <td>@uye.TBLPERSONEL.PERSONEL</td>
+            <td>@Convert.ToDateTime(uye.ALISTARIHI).ToString("dd/MM/yyyy")</td>
+            <td>@Convert.ToDateTime(uye.UYEGETIRTARIH).ToString("dd/MM/yyyy")</td>
+
+
+
+
+        </tr>
+    }
+
+</table>

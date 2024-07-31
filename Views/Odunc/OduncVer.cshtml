@@ -1,0 +1,74 @@
+﻿@model MVCKutuphane.Models.Entity.TBLHAREKET
+@{
+    ViewBag.Title = "OduncVer";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+
+<div class="col-md-6 mx-auto form-group">
+    <h6 class="fw-bold ">Ödünç Kitap Ver Sayfası</h6>
+    <hr style="border:solid 2px black" />
+    <form  method="post">
+        <div class="fw-bolder">
+            <br />
+            <div>
+                <label>ÜYE ADI</label>
+                @*@Html.TextBoxFor(k => k.UYE, new { @class = "form-control", required = "required" })*@
+                @Html.DropDownListFor(k => k.TBLUYELER.ID, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+            </div>
+            <br />
+            <div>
+                <label>KİTAP ADI</label>
+                @*@Html.TextBoxFor(k => k.KİTAP, new { @class = "form-control", required = "required" })*@
+                @Html.DropDownListFor(y => y.TBLKITAP.ID, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
+
+            </div>
+            <br />
+            <div>
+                <label>PERSONEL ADI</label>
+                @*@Html.TextBoxFor(k => k.PERSONEL, new { @class = "form-control", required = "required" })*@
+                @Html.DropDownListFor(z => z.TBLPERSONEL.ID, (List<SelectListItem>)ViewBag.dgr3, new { @class = "form-control" })
+
+            </div>
+            <br />
+            <div>
+                <label>KİTAP ALIŞ TARİHİ</label>
+                <input type="text" class="form-control" required="required" name="ALISTARIHI" value="@DateTime.Now.ToShortDateString()" />
+            </div>
+            <br />
+            <div>
+                <label>KİTAP İADE TARİHİ</label>
+                <input type="text" class="form-control" required="required" name="IADETARIHI" value="@DateTime.Now.AddDays(7).ToShortDateString()" />
+            </div>
+            <br />
+
+            <div class=" mt-3">
+                <button class="btn fw-semibold w-100" style="margin-top: 25px; margin-bottom: 50px; background-color: #202f44; color: aliceblue">Kitabı Ödünç Ver</button>
+                <input type="hidden" value="False" name="ISLEMDURUM" />
+            </div>
+        </div>
+    </form>
+    </div>
+
+    <style>
+        .d-flex-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-group {
+            width: 100%;
+            margin-top:7%;
+        }
+
+        .form-control-custom, .btn-custom {
+            width: 100%;
+        }
+
+        .col-md-6 {
+            max-width: 275px; /* İstediğiniz maksimum genişliği ayarlayabilirsiniz */
+            width: 100%;
+        }
+    </style>
