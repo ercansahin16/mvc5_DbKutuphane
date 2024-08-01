@@ -1,0 +1,41 @@
+Proje Adı: [mvc5_DbKutuphane]
+
+Klasör İçeriği
+
+Bu klasör, [mvc5_DbKutuphane] projesi için SQL Server Management Studio (SSMS) yedeklerini ve ilgili script dosyalarını içermektedir. Aşağıda, klasörün içeriği hakkında ayrıntılı bilgi bulabilirsiniz:
+
+Veritabanı Yedek Dosyası (Backup File)
+
+Dosya Adı: DBKUTUPHANE
+Açıklama: Bu dosya, [DBKUTUPHANE] veritabanının yedeklenmiş halidir. SQL Server Management Studio kullanılarak yedek alınmıştır ve gerektiğinde veritabanının geri yüklenmesi için kullanılabilir.
+
+Veritabanı Script Dosyaları (dbkutuphanescript)
+
+Dosya Adı: dbkutuphanescript
+Açıklama: Bu dosya, [DBKUTUPHANE] veritabanındaki tüm tabloların, saklı prosedürlerin, tetikleyicilerin ve diğer veritabanı nesnelerinin oluşturulması için gerekli olan SQL scriptlerini içerir. Bu scriptler, yeni bir veritabanı oluşturulması veya mevcut bir veritabanının güncellenmesi için kullanılabilir.
+
+Yapılandırma ve Kurulum Talimatları (Configuration and Setup Instructions)
+
+Dosya Adı: README.md
+Açıklama: Bu dosya, veritabanı yedek dosyasının geri yüklenmesi ve SQL script dosyalarının çalıştırılması ile ilgili adım adım talimatları içermektedir. Kullanıcıların veritabanını başarılı bir şekilde kurabilmeleri için gerekli tüm bilgileri sağlar.
+
+Yedekleme ve Geri Yükleme Talimatları
+
+Veritabanı Yedeğinin Geri Yüklenmesi (Restoring the Database Backup)
+
+SQL Server Management Studio'yu (SSMS) açın.
+Databases düğümüne sağ tıklayın ve Restore Database... seçeneğini seçin.
+Source bölümünde, Device seçeneğini seçin ve Add butonuna tıklayarak DBKUTUPHANE dosyasını ekleyin.
+Geri yükleme işlemini başlatmak için OK butonuna tıklayın.
+
+Veritabanı Scriptlerinin Çalıştırılması (Executing the Database Scripts)
+
+SQL Server Management Studio'yu (SSMS) açın.
+Yeni bir Query penceresi açın.
+dbkutuphanescript dosyasındaki tüm scriptleri kopyalayın ve bu yeni Query penceresine yapıştırın.
+Execute butonuna tıklayarak scriptleri çalıştırın.
+
+İletişim ve Destek
+Herhangi bir sorunla karşılaşırsanız veya yardıma ihtiyacınız olursa, lütfen bizimle iletişime geçmekten çekinmeyin.
+
+E-posta: [esahin.ast@gmail.com]
