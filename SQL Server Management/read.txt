@@ -36,6 +36,6 @@ dbkutuphanescript dosyasındaki tüm scriptleri kopyalayın ve bu yeni Query pen
 Execute butonuna tıklayarak scriptleri çalıştırın.
 
 İletişim ve Destek
-Herhangi bir sorunla karşılaşırsanız veya yardıma ihtiyacınız olursa, lütfen bizimle iletişime geçmekten çekinmeyin.
+Herhangi bir sorunla karşılaşırsanız veya yardıma ihtiyacınız olursa, lütfen benimle iletişime geçmekten çekinmeyin.
 
 E-posta: [esahin.ast@gmail.com]
